@@ -11,4 +11,10 @@ class SelectController extends Controller
   {
       return view('admin.select.create');
   }
+  
+  public function create(Request $request)
+  {
+      // admin/news/createにリダイレクトする
+      return redirect('admin/select/create');
+  }  
 }

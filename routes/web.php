@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('select/create', 'Admin\SelectController@add')->middleware('auth');
-    
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
+    Route::get('select/create', 'Admin\SelectController@add');
+    Route::post('select/create', 'Admin\SelectController@create');
 });
