@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>アンケート投稿一覧</h2>
+            <h2>{{ __('messages.List') }}</h2>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -35,6 +35,7 @@
                                 <th width="10%">ID</th>
                                 <th width="20%">ジャンル</th>
                                 <th width="50%">アンケート１</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,6 +44,11 @@
                                     <th>{{ $select->id }}</th>
                                     <td>{{ \Str::limit($select->title, 100) }}</td>
                                     <td>{{ \Str::limit($select->body1, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\SelectController@edit', ['id' => $select->id]) }}">編集</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

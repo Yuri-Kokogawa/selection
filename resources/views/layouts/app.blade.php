@@ -58,8 +58,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
                                     <a class="dropdown-item" href="{{ action('Admin\SelectController@index') }}">
                                         {{ __('messages.My Page') }}
+                                    </a>
+                                    
+                                    <a class="dropdown-item" href="{{ action('Admin\SelectController@index') }}">
+                                        {{ __('messages.List') }}
                                     </a>
                                     
                                     <a class="dropdown-item" href="{{ action('Admin\SelectController@add') }}">

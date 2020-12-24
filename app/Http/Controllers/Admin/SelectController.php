@@ -12,12 +12,13 @@ class SelectController extends Controller
     
     public function add()
   {
+      
       return view('admin.select.create');
   }
   
   
   
-  public function create(Request $request)
+     public function create(Request $request)
   {
        // 以下を追記
       // Varidationを行う
@@ -39,7 +40,7 @@ class SelectController extends Controller
   
   
   
-  public function index(Request $request)
+     public function index(Request $request)
   {
       $cond_title = $request->cond_title;
       if ($cond_title != '') {
@@ -51,6 +52,35 @@ class SelectController extends Controller
       }
       return view('admin.select.index', ['posts' => $posts, 'cond_title' => $cond_title]);
   }
+  
+  
+     public function edit(Request $request)
+  {
+      // Selections Modelからデータを取得する
+      $select= Selections::find($request->id);
+      if (empty($select)) {
+        abort(404);    
+      }
+      return view('admin.select.edit', ['select_form' => $select]);
+  }
+     
+     
+     public function update(Request $request)
+  {
+      // Validationをかける
+      $this->validate($request, Selections::$rules);
+      // Selections Modelからデータを取得する
+      $select = Selections::find($request->id);
+      // 送信されてきたフォームデータを格納する
+      $select_form = $request->all();
+      unset($select_form['_token']);
+
+      // 該当するデータを上書きして保存する
+      $select->fill($select_form)->save();
+
+      return redirect('admin/select');
+  }
+
 
   
 }

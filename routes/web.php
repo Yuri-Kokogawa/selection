@@ -23,4 +23,6 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('select/create', 'Admin\SelectController@add');
     Route::post('select/create', 'Admin\SelectController@create');
     Route::get('select', 'Admin\SelectController@index');
+    Route::get('select/edit', 'Admin\SelectController@edit'); 
+    Route::post('select/edit', 'Admin\SelctController@update');
 });
