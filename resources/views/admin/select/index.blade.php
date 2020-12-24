@@ -42,7 +42,7 @@
                                 <tr>
                                     <th>{{ $select->id }}</th>
                                     <td>{{ \Str::limit($select->title, 100) }}</td>
-                                    <td>{{ \Str::limit($select->body, 250) }}</td>
+                                    <td>{{ \Str::limit($select->body1, 250) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
