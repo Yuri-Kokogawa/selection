@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Selections extends Model
 {
-     public static $rules = array(
+    
+    protected $guarded = array('id');
+    
+    public static $rules = array(
+         
         'title' => 'required',
         'body1' => 'required',
+        
+        
     );
 }

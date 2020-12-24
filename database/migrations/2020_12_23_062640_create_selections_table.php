@@ -17,7 +17,7 @@ class CreateSelectionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('body1');
-            $table->string('body');
+            $table->string('body')->nullable();;
             $table->timestamps();
         });
     }

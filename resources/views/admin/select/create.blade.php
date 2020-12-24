@@ -11,7 +11,7 @@
             <div class="col-md-8 mx-auto">
                 <h2>アンケート新規作成</h2><br>
                 <p>※ジャンルとアンケート1は必須項目です。</p>
-                <p>※本文は二択で回答できるものに限ります。</p>
+                <p>※本文は二択（Yes/No）で回答できるものに限ります。</p>
                 <form action="{{ action('Admin\SelectController@create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
@@ -25,7 +25,7 @@
                     <div class="form-group row">
                         <label class="col-md-4">ジャンル</label>
                         <div class="col-md-10">
-                            <input  id="title" type="text" class="form-control" name="name" value="{{ old('title') }}" required autofocus>
+                            <input  id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" required autofocus>
                             
                             @if ($errors->has('title'))
                                         <span class="invalid-feedback">
