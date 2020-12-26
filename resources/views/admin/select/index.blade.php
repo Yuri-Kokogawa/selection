@@ -32,7 +32,7 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
+                                <th width="10%">投稿順</th>
                                 <th width="20%">ジャンル</th>
                                 <th width="50%">アンケート１</th>
                                 <th width="10%">操作</th>

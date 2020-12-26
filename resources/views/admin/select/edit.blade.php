@@ -23,12 +23,74 @@
                     </div>
                     
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">本文</label>
+                        <label class="col-md-2" for="body1">アンケート１</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body1" rows="20">{{ $select_form->body1 }}</textarea>
+                            <textarea class="form-control" name="body1" rows="5">{{ $select_form->body1 }}</textarea>
                         </div>
                     </div>
                     
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート２</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                     <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート３</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート４</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート５</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート６</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート７</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート８</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート９</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">アンケート10</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="body" rows="5">{{ $select_form->body }}</textarea>
+                        </div>
+                    </div>
                     
                     <div class="form-group row">
                         <div class="col-md-10">

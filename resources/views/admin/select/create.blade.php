@@ -40,7 +40,7 @@
                             <textarea id="body1" class="form-control" name="body1" rows="5" required autofocus>{{ old('body1') }}</textarea>
                             @if ($errors->has('body1'))
                                             <span class="invalid-feedback">
-                                                <strong>{{ $errors->first('body ') }}</strong>
+                                                <strong>{{ $errors->first('body1 ') }}</strong>
                                             </span>
                             @endif
                         </div>
