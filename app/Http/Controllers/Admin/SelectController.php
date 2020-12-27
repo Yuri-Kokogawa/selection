@@ -80,7 +80,18 @@ class SelectController extends Controller
 
       return redirect('admin/select');
   }
+  
+  
+     public function delete(Request $request)
+  {
+      // 該当するSelections Modelを取得
+      $select = Selections::find($request->id)->delete();
+      // 削除する
+      $select->delete();
+      return redirect('admin/select/');
+  }
 
 
   
 }
+

@@ -48,6 +48,11 @@
                                         <div>
                                             <a href="{{ action('Admin\SelectController@edit', ['id' => $select->id]) }}">編集</a>
                                         </div>
+                                        
+                                        <div>
+                                            <a href="{{ action('Admin\SelectController@delete', ['id' => $select->id]) }}" method="post"
+                                            onclick='return confirm("本当に削除しますか？");'>削除</a>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
@@ -58,3 +63,5 @@
         </div>
     </div>
 @endsection
+
+

@@ -11,6 +11,7 @@
             <div class="col-md-8 mx-auto">
                 <h2>アンケート新規作成</h2><br>
                 <p>※ジャンルとアンケート1は必須項目です。</p>
+                <p>※作成できる数は10個までです。</p>
                 <p>※本文は二択（Yes/No）で回答できるものに限ります。</p>
                 <form action="{{ action('Admin\SelectController@create') }}" method="post" enctype="multipart/form-data">
 
@@ -49,63 +50,63 @@
                     <div class="form-group row">
                         <label class="col-md-6">アンケート2</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body2" rows="5">{{ old('body2') }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-6">アンケート3</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body3" rows="5">{{ old('body3') }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-6">アンケート4</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body4" rows="5">{{ old('body4') }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-6">アンケート5</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body5" rows="5">{{ old('body5') }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-6">アンケート6</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body6" rows="5">{{ old('body6') }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-6">アンケート7</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body7" rows="5">{{ old('body7') }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-6">アンケート8</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body8" rows="5">{{ old('body8') }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-6">アンケート9</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body9" rows="5">{{ old('body9') }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-6">アンケート10</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body10" rows="5">{{ old('body10') }}</textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}
