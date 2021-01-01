@@ -32,7 +32,7 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">投稿順</th>
+                                <th width="10%">id</th>
                                 <th width="20%">ジャンル</th>
                                 <th width="50%">アンケート１</th>
                                 <th width="10%">操作</th>
@@ -46,7 +46,13 @@
                                     <td>{{ \Str::limit($select->body1, 250) }}</td>
                                     <td>
                                         <div>
-                                            <a href="{{ action('Admin\SelectController@edit', ['id' => $select->id]) }}">編集</a>
+                                            
+                                            <form action="{{ action('Admin\SelectController@edit', ['id' => $select->id]) }}"　method="POST" >
+                                                @csrf
+                                            <button type="submit" >編集</button>
+                                            </form>
+                                            
+                                            
                                         </div>
                                         
                                         

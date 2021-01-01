@@ -25,7 +25,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('select', 'Admin\SelectController@index');
     Route::get('select/edit', 'Admin\SelectController@edit'); 
     Route::post('select/edit', 'Admin\SelectController@update');
-    Route::post('select/delete/{id}', 'Admin\SelectController@delete');
+    Route::delete('select/delete/{id}', 'Admin\SelectController@delete');
+    Route::get('select/info', 'Admin\SelectController@info');
 });
 
 

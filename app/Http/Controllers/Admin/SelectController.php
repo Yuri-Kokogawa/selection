@@ -54,10 +54,10 @@ class SelectController extends Controller
   }
   
   
-     public function edit(Request $request)
+     public function edit(int $id)
   {
       // Selections Modelからデータを取得する
-      $select= Selections::find($request->id);
+      $select= Selections::find($id);
       if (empty($select)) {
         abort(404);    
       }
@@ -82,16 +82,22 @@ class SelectController extends Controller
   }
   
   
-     public function delete(Request $request)
+     public function delete(int $id)
   {
       // 該当するSelections Modelを取得
-      $select = Selections::find($request->id)->delete();
+      $select = Selections::destroy($id);
       // 削除する
-      $select->delete();
+     
       return redirect('admin/select/');
   }
 
-
+   
+    public function info()
+  {
+      
+      return view('admin.select.info');
+  }
   
 }
 
+    
