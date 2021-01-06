@@ -34,7 +34,7 @@ class SelectController extends Controller
       $select->fill($form);
       $select->save();
       
-      // admin/news/createにリダイレクトする
+      // admin/select/createにリダイレクトする
       return redirect('admin/select/create');
   }  
   

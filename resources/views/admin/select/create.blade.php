@@ -15,13 +15,7 @@
                 <p>※本文は二択（Yes/No）で回答できるものに限ります。</p>
                 <form action="{{ action('Admin\SelectController@create') }}" method="post" enctype="multipart/form-data">
 
-                    @if (count($errors) > 0)
-                        <ul>
-                            @foreach($errors->all() as $e)
-                                <li>{{ $e }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
+                    
                     
                     <div class="form-group row">
                         <label class="col-md-4">ジャンル</label>

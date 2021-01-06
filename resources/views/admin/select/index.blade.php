@@ -47,7 +47,7 @@
                                     <td>
                                         <div>
                                             
-                                            <form action="{{ action('Admin\SelectController@edit', ['id' => $select->id]) }}"　method="POST" >
+                                            <form action="{{ action('Admin\SelectController@edit', ['id' => $select->id]) }}"　method="get" >
                                                 @csrf
                                             <button type="submit" >編集</button>
                                             </form>
