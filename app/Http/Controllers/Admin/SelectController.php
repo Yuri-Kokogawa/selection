@@ -88,14 +88,16 @@ class SelectController extends Controller
       $select = Selections::destroy($id);
       // 削除する
      
-      return redirect('admin/select/');
+      return redirect('admin/select/index');
   }
 
    
     public function info()
   {
-      
-      return view('admin.select.info');
+      $auth = Auth::user();
+
+
+      return view('admin.select.info',[ 'auth' => $auth ]);
   }
   
 }

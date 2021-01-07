@@ -1,56 +1,66 @@
 @extends('layouts.app')
 
-@section('title', '投稿したアンケート')
+@section('title', 'マイページ')
 
 
 @section('content')
-<div class="container">
-    <h3>Laravelで簡単なアンケートフォームを作る</h3>
+<div class="index-content">
+    <div class="books-list">
+        <div class="books-list_title mypage-color">
+            マイページトップ
+        </div>
+         <form action="{{ action('Admin\SelectController@info') }}" method="get" enctype="multipart/form-data">
 
-    @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+        <div class="book-table">
+            <div class="book-table__profile-list">
+
+                <div class="profile-group">
+                
+                     <div class="profile-group__title">ユーザー名</div>
+                
+                        <div class="profile-group__element">{{$auth->name}}</div>
+                
+                </div>
+                
+                <div class="profile-group">
+                
+                     <div class="profile-group__title">ユーザーID</div>
+                
+                         <div class="profile-group__element">{{$auth->id}}</div>
+                
+                </div>
+                
+                <div class="profile-group">
+                
+                    <div class="profile-group__title">メールアドレス</div>
+                
+                         <div class="profile-group__element">{{$auth->email}}</div>
+                
+                </div>
+                
+                <div class="profile-group">
+                
+                    <div class="profile-group__title">登録日時</div>
+                
+                        <div class="profile-group__element">{{$auth->created_at}}</div>
+                
+                </div>
+                
+                <div class="profile-group">
+                
+                    <div class="profile-group__title">最終更新日時</div>
+                
+                        <div class="profile-group__element">{{$auth->updated_at}}</div>
+                
+                </div>
+                
+             </div>
+                
+        </div>
+
+
+        </form>
     </div>
-    @endif
-    <form method="get" action="{{ action('Admin\SelectController@info') }}">
-        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
- 
-        <div class="form-group">
-            <label>ニックネーム</label><span class="label label-danger">必須</span>
- 
-            <input type="text" class="form-control" name="name" placeholder="ニックネームを入力してください">
-        </div>
-        <div class="form-group">
-            <label>メールアドレス</label><span class="label label-danger">必須</span>
-            <input type="text" class="form-control" name="email" placeholder="メールアドレスを入力してください">
-        </div>
-        <div class="form-group">
-            <label>性別</label><span class="label label-danger">必須</span>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gender" value="1">男性
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gender" value="2">女性
-                </label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>内容</label><span class="label label-danger">必須</span>
-            <textarea class="form-control" name="content" rows="3" placeholder="内容を入力してください"></textarea>
-        </div>
-        <div class="form-group row">
-            <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">確認する</button>
-            </div>
-        </div>
-    </form>
 </div>
 
 @endsection
