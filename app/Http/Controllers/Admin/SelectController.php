@@ -78,7 +78,7 @@ class SelectController extends Controller
       // 該当するデータを上書きして保存する
       $select->fill($select_form)->save();
 
-      return redirect('admin/select');
+      return redirect('admin/select/index');
   }
   
   
@@ -96,8 +96,7 @@ class SelectController extends Controller
   {
       $auth = Auth::user();
 
-
-      return view('admin.select.info',[ 'auth' => $auth ]);
+      return view('admin.info',[ 'auth' => $auth ]);
   }
   
 }
