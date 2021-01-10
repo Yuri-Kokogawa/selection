@@ -59,15 +59,15 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     
-                                    <a class="dropdown-item" href="{{ action('Admin\SelectController@index') }}">
+                                    <a class="dropdown-item" href="{{ action('Contributor\ContributorsController@info') }}">
                                         {{ __('messages.My Page') }}
                                     </a>
                                     
-                                    <a class="dropdown-item" href="{{ action('Admin\SelectController@index') }}">
+                                    <a class="dropdown-item" href="{{ action('Contributor\ContributorsController@index') }}">
                                         {{ __('messages.List') }}
                                     </a>
                                     
-                                    <a class="dropdown-item" href="{{ action('Admin\SelectController@add') }}">
+                                    <a class="dropdown-item" href="{{ action('Contributor\ContributorsController@add') }}">
                                         {{ __('messages.New Select') }}
                                     </a>
                                     

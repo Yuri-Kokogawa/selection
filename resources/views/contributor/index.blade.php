@@ -8,15 +8,17 @@
             <h2>{{ __('messages.List') }}</h2>
         </div>
         <div class="row">
+            
             <div class="col-md-4">
-                <a href="{{ action('Admin\SelectController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+                <a href="{{ action('Contributor\ContributorsController@add') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>
+            
             <div class="col-md-8">
-                <form action="{{ action('Admin\SelectController@index') }}" method="get">
+                <form action="{{ action('Contributor\ContributorsController@index') }}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2 form-inline">ジャンル</label>
+                        <label class="col-md-2 form-inline">カテゴリ</label>
                         <div class="col-md-8 ">
-                            <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                            <input type="text" class="form-control" name="cond_category" value="{{ $cond_category }}">
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
@@ -25,45 +27,42 @@
                     </div>
                 </form>
             </div>
+            
         </div>
         <div class="row">
             <div class="list-select col-md-12 mx-auto">
                 <div class="row">
-                    <table class="table table-dark">
+                    <table class="table table">
                         <thead>
                             <tr>
                                 <th width="10%">id</th>
-                                <th width="20%">ジャンル</th>
-                                <th width="50%">アンケート１</th>
+                                <th width="20%">カテゴリ</th>
+                                <th width="50%">アンケート</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $select)
+                            @foreach($posts as $contributor)
                                 <tr>
-                                    <th>{{ $select->id }}</th>
-                                    <td>{{ \Str::limit($select->title, 100) }}</td>
-                                    <td>{{ \Str::limit($select->body1, 250) }}</td>
+                                    <th>{{ $contributor->id }}</th>
+                                    <td>{{ \Str::limit($contributor->category, 100) }}</td>
+                                    <td>{{ \Str::limit($contributor->body, 300) }}</td>
                                     <td>
+                                        
                                         <div>
-                                            
-                                            <form action="{{ action('Admin\SelectController@edit', ['id' => $select->id]) }}"　method="get" >
+                                            <form action="{{ action('Contributor\ContributorsController@edit', ['id' => $contributor->id]) }}"　method="get" >
                                                 @csrf
                                             <button type="submit" >編集</button>
                                             </form>
-                                            
-                                            
                                         </div>
                                         
                                         
-                                        <form action="{{ action('Admin\SelectController@delete', ['id' => $select->id]) }}"  method="POST">
+                                        <form action="{{ action('Contributor\ContributorsController@delete', ['id' => $contributor->id]) }}"  method="POST">
                                             @method('delete')
                                             @csrf
                                             <button type="submit"  onclick='return confirm("本当に削除しますか？");'>削除</button>
                                         </form>
 
-                                        
-                                        
                                     </td>
                                 </tr>
                             @endforeach

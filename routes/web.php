@@ -18,14 +18,14 @@ Route::get('/', function () {
 
 
 // 管理者側のコントローラー
-Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
-    Route::get('select/create', 'Admin\SelectController@add');
-    Route::post('select/create', 'Admin\SelectController@create');
-    Route::get('select/index', 'Admin\SelectController@index');
-    Route::get('select/edit/{id}', 'Admin\SelectController@edit'); 
-    Route::post('select/edit', 'Admin\SelectController@update');
-    Route::delete('select/delete/{id}', 'Admin\SelectController@delete');
-    Route::get('select/info', 'Admin\SelectController@info');
+Route::group(['prefix' => 'contributor','middleware' => 'auth'], function() {
+    Route::get('create', 'Contributor\ContributorsController@add');
+    Route::post('create', 'Contributor\ContributorsController@create');
+    Route::get('index', 'Contributor\ContributorsController@index');
+    Route::get('edit/{id}', 'Contributor\ContributorsController@edit'); 
+    Route::post('edit', 'Contributor\ContributorsController@update');
+    Route::delete('delete/{id}', 'Contributor\ContributorsController@delete');
+    Route::get('info', 'Contributor\ContributorsController@info');
    
 });
 

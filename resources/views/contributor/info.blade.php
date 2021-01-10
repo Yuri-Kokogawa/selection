@@ -2,7 +2,6 @@
 
 @section('title', 'マイページ')
 
-
 @section('content')
 <div class="index-content">
     <div class="books-list">

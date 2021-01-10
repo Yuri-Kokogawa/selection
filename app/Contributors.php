@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Selections extends Model
+class Contributors extends Model
 {
     
     protected $guarded = array('id');
     
     public static $rules = array(
          
-        'title' => 'required',
-        'body1' => 'required',
+        'category_name_id' => 'required',
+        'body' => 'required',
         
         
     );
