@@ -15,8 +15,8 @@ class CreateContributorsTable extends Migration
     {
         Schema::create('contributors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->category_name_id('integer');
-            $table->body('string');
+            $table->integer('category_name_id');
+            $table->string('body');
             $table->timestamps();
         });
     }
