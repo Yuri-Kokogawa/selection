@@ -17,16 +17,16 @@
                     <div class="form-group row">
                         <label class="col-md-4">カテゴリ</label>
                         <div class="col-md-6 form-inline">
-                                <select name="category">
+                                <select name="category_name_id">
                                     <option value="">選択してください</option>
                                     <option value="仕事">仕事</option>
                                     <option value="勉強">勉強</option>
                                 </select>
                             </div>
                         <div class="col-md-10">
-                            @if ($errors->has('category'))
+                            @if ($errors->has('category_name_id'))
                                         <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('category') }}</strong>
+                                            <strong>{{ $errors->first('category_name_id') }}</strong>
                                         </span>
                             @endif
                         </div>
