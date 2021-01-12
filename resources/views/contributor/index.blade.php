@@ -45,24 +45,25 @@
                             @foreach($posts as $contributor)
                                 <tr>
                                     <th>{{ $contributor->id }}</th>
-                                    <td>{{ \Str::limit($contributor->category, 100) }}</td>
+                                    <td>{{ \Str::limit($contributor->category_name_id, 100) }}</td>
                                     <td>{{ \Str::limit($contributor->body, 300) }}</td>
                                     <td>
                                         
-                                        <div>
-                                            <form action="{{ action('Contributor\ContributorsController@edit', ['id' => $contributor->id]) }}"　method="get" >
+                                        <div class="row mb-2" >
+                                           <form action="{{ action('Contributor\ContributorsController@edit', ['id' => $contributor->id]) }}"　method="get" >
                                                 @csrf
-                                            <button type="submit" >編集</button>
+                                            <button type="submit" class="btn btn-primary">編集</button>
                                             </form>
                                         </div>
                                         
-                                        
+                                        <div class="row">
                                         <form action="{{ action('Contributor\ContributorsController@delete', ['id' => $contributor->id]) }}"  method="POST">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit"  onclick='return confirm("本当に削除しますか？");'>削除</button>
+                                            <button type="submit" class="btn btn-primary" onclick='return confirm("本当に削除しますか？");'>削除</button>
                                         </form>
-
+                                        </div>
+                                         
                                     </td>
                                 </tr>
                             @endforeach

@@ -64,19 +64,17 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('messages.Age') }}</label>
+                            <label for="age_id" class="col-md-4 col-form-label text-md-right">{{ __('messages.Age') }}</label>
 
                             <div class="col-md-6 form-inline">
-                                <select name="age">
+                                <select name="age_id">
                                     <option value="">選択してください</option>
                                     <option value="20歳未満">20歳未満</option>
                                     <option value="20-29歳">20-29歳</option>
                                     <option value="30-39歳">30-39歳</option>
                                     <option value="40-49歳">40-49歳</option>
                                     <option value="50-59歳">50-59歳</option>
-                                    <option value="60-69歳">60-69歳</option>
-                                    <option value="70-79歳">70-79歳</option>
-                                    <option value="80歳以上">80歳以上</option>
+                                    <option value="60歳以上">60歳以上</option>
                                 </select>
                             </div>
                         </div>

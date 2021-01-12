@@ -19,8 +19,8 @@
                         <div class="col-md-6 form-inline">
                                 <select name="category_name_id">
                                     <option value="">選択してください</option>
-                                    <option value="仕事">仕事</option>
-                                    <option value="勉強">勉強</option>
+                                    <option value="1">仕事</option>
+                                    <option value="2">勉強</option>
                                 </select>
                             </div>
                         <div class="col-md-10">

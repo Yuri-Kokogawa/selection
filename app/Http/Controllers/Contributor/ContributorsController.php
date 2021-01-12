@@ -50,13 +50,16 @@ class ContributorsController extends Controller
           // それ以外はすべてのニュースを取得する
           $posts = Contributors::all();
       }
+      
+      
+      
       return view('contributor.index', ['posts' => $posts, 'cond_category' => $cond_category]);
   }
   
   
      public function edit(int $id)
   {
-      // Selections Modelからデータを取得する
+      // Contributors Modelからデータを取得する
       $contributor= Contributors::find($id);
       if (empty($contributor)) {
         abort(404);    

@@ -11,7 +11,6 @@ class Categories extends Model
     // 以下を追記
     public static $rules = array(
         'category_name' => 'required',
-        'body' => 'required',
     );
 
     
