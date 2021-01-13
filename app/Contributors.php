@@ -13,7 +13,11 @@ class Contributors extends Model
          
         'category_name_id' => 'required',
         'body' => 'required',
-        
-        
     );
+    
+     public function Categories()
+    {
+      return $this->belongsTo('App\Categories');
+
+    }
 }

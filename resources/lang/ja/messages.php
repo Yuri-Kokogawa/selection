@@ -16,4 +16,5 @@ return [
     'New Select'=>'アンケート作成',
     'My Page'=>'マイページ',
     'List'=>'投稿一覧',
+    'Top Page'=>'トップページ',
 ];

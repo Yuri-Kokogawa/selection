@@ -59,6 +59,10 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     
+                                    <a class="dropdown-item" href="{{ action('AnswerController@index') }}">
+                                        {{ __('messages.Top Page') }}
+                                    </a>
+                                    
                                     <a class="dropdown-item" href="{{ action('Contributor\ContributorsController@info') }}">
                                         {{ __('messages.My Page') }}
                                     </a>

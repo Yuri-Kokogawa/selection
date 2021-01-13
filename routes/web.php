@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 
-// 管理者側のコントローラー
+// 投稿者側のコントローラー
 Route::group(['prefix' => 'contributor','middleware' => 'auth'], function() {
     Route::get('create', 'Contributor\ContributorsController@add');
     Route::post('create', 'Contributor\ContributorsController@create');
@@ -26,11 +26,13 @@ Route::group(['prefix' => 'contributor','middleware' => 'auth'], function() {
     Route::post('edit', 'Contributor\ContributorsController@update');
     Route::delete('delete/{id}', 'Contributor\ContributorsController@delete');
     Route::get('info', 'Contributor\ContributorsController@info');
-   
+    Route::get('info_edit', 'Contributor\ContributorsController@info_edit');
 });
 
 
 // 回答者側のコントローラー
 Route::group(['prefix' => 'answer','middleware' => 'auth'], function() {
     Route::get('index', 'AnswerController@index');
+    Route::get('create', 'AnswerController@create');
+    
 });

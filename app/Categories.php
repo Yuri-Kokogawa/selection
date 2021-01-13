@@ -8,7 +8,7 @@ class Categories extends Model
 {
      protected $guarded = array('id');
 
-    // 以下を追記
+    
     public static $rules = array(
         'category_name' => 'required',
     );

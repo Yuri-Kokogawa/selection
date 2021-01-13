@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Contributor;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use App\Contributors;
+use App\Categories;
 use Auth;
 class ContributorsController extends Controller
 {
@@ -100,6 +102,14 @@ class ContributorsController extends Controller
       $auth = Auth::user();
 
       return view('contributor/info',[ 'auth' => $auth ]);
+  }
+  
+    
+    public function info_edit()
+  {
+      $auth = Auth::user();
+      
+      return view('contributor.info_edit');
   }
   
 }

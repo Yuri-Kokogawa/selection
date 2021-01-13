@@ -14,9 +14,9 @@ class Ages extends Model
         
     );
     
-    public function histories()
+    public function users()
     {
-      return $this->hasMany('App\History');
+      return $this->hasMany('App\User');
 
     }
 }

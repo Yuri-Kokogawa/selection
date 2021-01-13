@@ -8,41 +8,43 @@
 @section('content')
     <div class="container">
         <div class="row ">
-            <div class="col-md-8 mx-auto">
-                <h2>アンケート新規作成</h2><br>
-                <p>※本文は二択（Yes/No）で回答できるものに限ります。</p>
+            <div class="col-md-12 text-center">
+                <h2>アンケート作成</h2><br>
+                
                 <form action="{{ action('Contributor\ContributorsController@create') }}" method="post" enctype="multipart/form-data">
 
                     
-                    <div class="form-group row">
-                        <label class="col-md-4">カテゴリ</label>
-                        <div class="col-md-6 form-inline">
-                                <select name="category_name_id">
+                    <div class="row">
+                        <h3 class="col-md-6 text-center">カテゴリ</h3>
+                        <div class=""></div>
+                                <select name="category_name_id ">
                                     <option value="">選択してください</option>
                                     <option value="1">仕事</option>
                                     <option value="2">勉強</option>
                                 </select>
                             </div>
-                        <div class="col-md-10">
+                            
+                        <div class="col-md-6 text-center">
                             @if ($errors->has('category_name_id'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('category_name_id') }}</strong>
                                         </span>
                             @endif
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <textarea id="body"  name="body" rows="10" cols="100" required autofocus>{{ old('body') }}</textarea>
+                                @if ($errors->has('body'))
+                                                <span class="invalid-feedback">
+                                                    <strong>{{ $errors->first('body') }}</strong>
+                                                </span>
+                                @endif
                         </div>
                     </div>
                     
-                    <div class="form-group row">
-                        <label class="col-md-6">アンケート</label>
-                        <div class="col-md-10">
-                            <textarea id="body" class="form-control" name="body" rows="10" required autofocus>{{ old('body') }}</textarea>
-                            @if ($errors->has('body'))
-                                            <span class="invalid-feedback">
-                                                <strong>{{ $errors->first('body') }}</strong>
-                                            </span>
-                            @endif
-                        </div>
-                    </div>
+                    <p>※本文は二択（Yes/No）で回答できる内容のものに限ります。</p>
                     
                     {{ csrf_field() }}
                     

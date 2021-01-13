@@ -38,7 +38,7 @@
                                 <th width="10%">id</th>
                                 <th width="20%">カテゴリ</th>
                                 <th width="50%">アンケート</th>
-                                <th width="10%">操作</th>
+                                <th width="10%"></th>
                             </tr>
                         </thead>
                         <tbody>

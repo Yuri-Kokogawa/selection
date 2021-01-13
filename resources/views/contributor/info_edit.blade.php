@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'マイページ')
+
+@section('title', 'プロフィール変更')
+
+
 
 @section('content')
 <div class="container">
@@ -39,9 +42,6 @@
       </div>
   </div>
 </div>
-
-   
-  
 
 
 

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\HTML;
 
 
 use App\Contributors;
-
+use App\Categories;
 class AnswerController extends Controller
 {
     public function index(Request $request)
@@ -24,4 +24,14 @@ class AnswerController extends Controller
         // また View テンプレートに headline、 posts、という変数を渡している
         return view('answer.index', ['headline' => $headline, 'posts' => $posts]);
     }
+    
+    
+    
+      public function create()
+  {
+      
+      return view('answer.create');
+  }
 }
+
+
