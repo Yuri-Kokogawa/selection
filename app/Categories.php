@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categories extends Model
 {
-     protected $guarded = array('id');
+     protected $guarded = array('category_name_id');
 
     
     public static $rules = array(

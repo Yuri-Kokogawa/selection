@@ -44,16 +44,18 @@ class ContributorsController extends Controller
   
      public function index(Request $request)
   {
+    
+      
       $cond_category = $request->cond_category;
       if ($cond_category != '') {
           // 検索されたら検索結果を取得する
-          $posts = Contributors::where('category', $cond_category)->get();
+          $posts = Contributors::where('category_name_id', $cond_category)->get();
       } else {
-          // それ以外はすべてのニュースを取得する
+          // それ以外はすべてのアンケートを取得する
           $posts = Contributors::all();
       }
       
-      
+       
       
       return view('contributor.index', ['posts' => $posts, 'cond_category' => $cond_category]);
   }
@@ -74,7 +76,7 @@ class ContributorsController extends Controller
   {
       // Validationをかける
       $this->validate($request, Contributors::$rules);
-      // Selections Modelからデータを取得する
+      // Contibutors Modelからデータを取得する
       $contributor = Contributors::find($request->id);
       // 送信されてきたフォームデータを格納する
       $contributor_form = $request->all();
@@ -89,7 +91,7 @@ class ContributorsController extends Controller
   
      public function delete(int $id)
   {
-      // 該当するSelections Modelを取得
+      // 該当するContibutors Modelを取得
       $contributor = Contributors::destroy($id);
       // 削除する
      
@@ -109,7 +111,14 @@ class ContributorsController extends Controller
   {
       $auth = Auth::user();
       
-      return view('contributor.info_edit');
+      return view('contributor.info_edit',[ 'auth' => $auth ]);
+  }
+  
+    public function password()
+  {
+      $auth = Auth::user();
+      
+      return view('contributor.password',[ 'auth' => $auth ]);
   }
   
 }

@@ -17,4 +17,5 @@ return [
     'My Page'=>'マイページ',
     'List'=>'投稿一覧',
     'Top Page'=>'トップページ',
+    'Change Password'=>'パスワード変更'
 ];

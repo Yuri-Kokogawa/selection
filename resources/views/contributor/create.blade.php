@@ -15,22 +15,20 @@
 
                     
                     <div class="row">
-                        <h3 class="col-md-6 text-center">カテゴリ</h3>
-                        <div class=""></div>
-                                <select name="category_name_id ">
-                                    <option value="">選択してください</option>
-                                    <option value="1">仕事</option>
-                                    <option value="2">勉強</option>
-                                </select>
-                            </div>
-                            
-                        <div class="col-md-6 text-center">
+                        <div class="col-md-12 text-center">
+                            <h5>カテゴリ
+                            <select name="category_name_id">
+                                <option value="">選択してください</option>
+                                <option value="1">仕事</option>
+                                <option value="2">勉強</option>
+                            </select>
+                            </h5>
                             @if ($errors->has('category_name_id'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('category_name_id') }}</strong>
                                         </span>
                             @endif
-                        
+                        </div>
                     </div>
                     
                     <div class="row">

@@ -7,37 +7,39 @@
         <div class="row">
             <h2>{{ __('messages.List') }}</h2>
         </div>
+        
         <div class="row">
-            
-            <div class="col-md-4">
-                <a href="{{ action('Contributor\ContributorsController@add') }}" role="button" class="btn btn-primary">新規作成</a>
-            </div>
-            
-            <div class="col-md-8">
-                <form action="{{ action('Contributor\ContributorsController@index') }}" method="get">
-                    <div class="form-group row">
-                        <label class="col-md-2 form-inline">カテゴリ</label>
-                        <div class="col-md-8 ">
-                            <input type="text" class="form-control" name="cond_category" value="{{ $cond_category }}">
+            <div class="col-md-12 text-right mb-2">
+                <form action="{{ action('Contributor\ContributorsController@index') }}" method="get" >
+                    <div class="row">
+                        <div class="col-md-2 offset-md-6">
+                            <h5>カテゴリ</h5>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 text-left">
+                            <select name="cond_category">
+                                <option value="">選択してください</option>
+                                <option value="1">仕事</option>
+                                <option value="2">勉強</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 text-center ">
                             {{ csrf_field() }}
                             <input type="submit" class="btn btn-primary" value="検索">
                         </div>
                     </div>
                 </form>
             </div>
-            
         </div>
+        
         <div class="row">
             <div class="list-select col-md-12 mx-auto">
                 <div class="row">
-                    <table class="table table">
+                    <table class="table" style="table-layout:fixed;width:100%;">
                         <thead>
                             <tr>
                                 <th width="10%">id</th>
                                 <th width="20%">カテゴリ</th>
-                                <th width="50%">アンケート</th>
+                                <th width="60%">アンケート</th>
                                 <th width="10%"></th>
                             </tr>
                         </thead>
@@ -46,7 +48,7 @@
                                 <tr>
                                     <th>{{ $contributor->id }}</th>
                                     <td>{{ \Str::limit($contributor->category_name_id, 100) }}</td>
-                                    <td>{{ \Str::limit($contributor->body, 300) }}</td>
+                                    <td style="word-wrap:break-word;">{{ \Str::limit($contributor->body, 500) }}</td>
                                     <td>
                                         
                                         <div class="row mb-2" >
@@ -56,12 +58,19 @@
                                             </form>
                                         </div>
                                         
-                                        <div class="row">
+                                        <div class="row mb-2">
                                         <form action="{{ action('Contributor\ContributorsController@delete', ['id' => $contributor->id]) }}"  method="POST">
                                             @method('delete')
                                             @csrf
                                             <button type="submit" class="btn btn-primary" onclick='return confirm("本当に削除しますか？");'>削除</button>
                                         </form>
+                                        </div>
+                                        
+                                        <div class="row" >
+                                           <form action="{{ action('AnswerController@view', ['id' => $contributor->id]) }}"　method="get" >
+                                                @csrf
+                                            <button type="submit" class="btn btn-primary">集計</button>
+                                            </form>
                                         </div>
                                          
                                     </td>

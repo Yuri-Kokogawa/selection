@@ -67,7 +67,7 @@
                             <label for="age_id" class="col-md-4 col-form-label text-md-right">{{ __('messages.Age') }}</label>
 
                             <div class="col-md-6 form-inline">
-                                <select name="age_id">
+                                <select name="age_id"　value="">
                                     <option value="">選択してください</option>
                                     <option value="20歳未満">20歳未満</option>
                                     <option value="20-29歳">20-29歳</option>
@@ -83,7 +83,7 @@
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('messages.Gender') }}</label>
                             <div class="col-md-6 form-check form-inline">
                                 <input id="radio-a" type="radio" name="gender" value="男" checked><label for="radio-a">男</label>
-                                <input id="radio-b" type="radio" name="gender" value="女"><label for="radio-c">女</label>
+                                <input id="radio-b" type="radio" name="gender" value="女"><label for="radio-b">女</label>
                             </div>
                     　　</div>
 

@@ -5,6 +5,9 @@
 @section('content')
 <div class="container">
   <div class="row">
+    <div class="col-md-12 text-center">
+    <form action="info_edit">
+      @csrf
     <table class="table">
       <tbody>
         <tr>
@@ -37,12 +40,10 @@
       <div class="col-md-12 text-left">
           <button type="submit" class="btn btn-primary">変更</button>
       </div>
+    </form>
+    </div>
   </div>
 </div>
-
-   
-  
-
 
 
 @endsection
