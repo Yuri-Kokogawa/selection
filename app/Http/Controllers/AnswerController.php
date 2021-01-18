@@ -24,11 +24,16 @@ class AnswerController extends Controller
     
     
     
-      public function create()
+      public function create(int $id)
   {
+      $contributor= Contributors::find($id);
+      if (empty($contributor)) {
+        abort(404);    
+      }
+      
        $auth = Auth::user();
        
-      return view('answer.create',[ 'auth' => $auth ]);
+      return view('answer.create',[ 'auth' => $auth ],['contributor_form' => $contributor]);
   }
   
       public function view()

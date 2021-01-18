@@ -24,7 +24,7 @@
     
     <div class="row">
         <div class="col-md-6 text-center">
-            <h3>カテゴリ/()</h3>
+            <h3>カテゴリ/({{ str_limit($post->categories->category_name, 150) }})</h3>
         </div>
     </div>
     

@@ -37,7 +37,7 @@ class ContributorsController extends Controller
       $contributor->save();
       
       // contributor/createにリダイレクトする
-      return redirect('contributor/create');
+      return redirect('contributor/index');
   }  
   
   
@@ -83,8 +83,9 @@ class ContributorsController extends Controller
       unset($contributor_form['_token']);
 
       // 該当するデータを上書きして保存する
-      $contributor->fill($contributor_form)->save();
-
+      
+     $contributor->fill($contributor_form)->save();
+      
       return redirect('contributor/index');
   }
   

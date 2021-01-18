@@ -17,7 +17,7 @@ class Contributors extends Model
     
      public function Categories()
     {
-      return $this->belongsTo('App\Categories');
-
+      return $this->belongsTo('App\Categories','category_name_id','category_name_id');
+    
     }
 }

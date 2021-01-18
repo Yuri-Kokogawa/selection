@@ -12,7 +12,13 @@
                 <h2>アンケート作成</h2><br>
                 
                 <form action="{{ action('Contributor\ContributorsController@create') }}" method="post" enctype="multipart/form-data">
-
+                    @if (count($errors) > 0)
+                        
+                            @foreach($errors->all() as $e)
+                               <div class="alert alert-danger" role="alert"> {{ $e }}</div>
+                            @endforeach
+                        
+                    @endif
                     
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -28,6 +34,7 @@
                                             <strong>{{ $errors->first('category_name_id') }}</strong>
                                         </span>
                             @endif
+                            
                         </div>
                     </div>
                     

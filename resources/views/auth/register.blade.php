@@ -69,12 +69,12 @@
                             <div class="col-md-6 form-inline">
                                 <select name="age_id"　value="">
                                     <option value="">選択してください</option>
-                                    <option value="20歳未満">20歳未満</option>
-                                    <option value="20-29歳">20-29歳</option>
-                                    <option value="30-39歳">30-39歳</option>
-                                    <option value="40-49歳">40-49歳</option>
-                                    <option value="50-59歳">50-59歳</option>
-                                    <option value="60歳以上">60歳以上</option>
+                                    <option value="1">20歳未満</option>
+                                    <option value="2">20-29歳</option>
+                                    <option value="3">30-39歳</option>
+                                    <option value="4">40-49歳</option>
+                                    <option value="5">50-59歳</option>
+                                    <option value="6">60歳以上</option>
                                 </select>
                             </div>
                         </div>
@@ -82,8 +82,8 @@
                          <div class="form-group row">
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('messages.Gender') }}</label>
                             <div class="col-md-6 form-check form-inline">
-                                <input id="radio-a" type="radio" name="gender" value="男" checked><label for="radio-a">男</label>
-                                <input id="radio-b" type="radio" name="gender" value="女"><label for="radio-b">女</label>
+                                <input id="radio-a" type="radio" name="gender" value="0" checked><label for="radio-a">男</label>
+                                <input id="radio-b" type="radio" name="gender" value="1"><label for="radio-b">女</label>
                             </div>
                     　　</div>
 
