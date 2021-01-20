@@ -27,15 +27,13 @@
     
      <div class="row">
         <div class="col-md-6 text-center">
-            <h4>カテゴリ/()</h4>
+            <h4>カテゴリ/({{$contributor->categories->category_name}})</h4>
         </div>
     </div>
     
     <div class="row mb-4">
          <div class="col-md-12 text-center">
-                 <textarea readonly rows="10" cols="100">
-                     
-                 </textarea>
+                 <textarea readonly rows="10" cols="100">{{$contributor->body }}</textarea>
          </div>
      </div>
      

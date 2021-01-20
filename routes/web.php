@@ -39,6 +39,6 @@ Route::group(['prefix' => 'contributor','middleware' => 'auth'], function() {
 Route::group(['prefix' => 'answer','middleware' => 'auth'], function() {
     Route::get('index', 'AnswerController@index');
     Route::get('create/{id}', 'AnswerController@create');
-    // Route::post('create/{id}', 'AnswerController@create');
-    Route::get('view', 'AnswerController@view');
+    Route::post('create/{id}', 'AnswerController@create');
+    Route::get('view/{id}', 'AnswerController@view');
 });

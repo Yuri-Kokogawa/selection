@@ -36,11 +36,19 @@ class AnswerController extends Controller
       return view('answer.create',[ 'auth' => $auth ],['contributor_form' => $contributor]);
   }
   
-      public function view()
+  
+      public function view(int $id)
   {
+      
+       $contributor= Contributors::find($id);
+      if (empty($contributor)) {
+        abort(404);    
+      }
+      
        $auth = Auth::user();
        
-      return view('answer.view',[ 'auth' => $auth ]);
+    
+      return view('answer.view',[ 'auth' => $auth ],['contributor' => $contributor]);
   }
 }
 

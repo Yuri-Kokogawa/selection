@@ -47,15 +47,12 @@
                             @foreach($posts as $contributor)
                                 <tr>
                                     <th>{{ $contributor->id }}</th>
-                                    <td>{{ \Str::limit($contributor->category_name_id, 100) }}</td>
+                                    <td>{{ $contributor->categories->category_name }}</td>
                                     <td style="word-wrap:break-word;">{{ \Str::limit($contributor->body, 500) }}</td>
                                     <td>
                                         
                                         <div class="row mb-2" >
-                                           <form action="{{ action('Contributor\ContributorsController@edit', ['id' => $contributor->id]) }}"　method="get" >
-                                                @csrf
-                                            <button type="submit" class="btn btn-primary">編集</button>
-                                            </form>
+                                            <a href="{{ action('Contributor\ContributorsController@edit', ['id' => $contributor->id])}}" class="btn btn-primary">編集</a>
                                         </div>
                                         
                                         <div class="row mb-2">
@@ -67,10 +64,7 @@
                                         </div>
                                         
                                         <div class="row" >
-                                           <form action="{{ action('AnswerController@view', ['id' => $contributor->id]) }}"　method="get" >
-                                                @csrf
-                                            <button type="submit" class="btn btn-primary">集計</button>
-                                            </form>
+                                            <a href="{{ action('AnswerController@view', ['id' => $contributor->id])}}" class="btn btn-primary">集計</a>
                                         </div>
                                          
                                     </td>

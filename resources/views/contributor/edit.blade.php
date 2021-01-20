@@ -9,11 +9,11 @@
                 <h2>アンケート編集</h2>
                 <form action="{{ action('Contributor\ContributorsController@update', ['id' => $contributor_form->id]) }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
-                        <ul>
+                        
                             @foreach($errors->all() as $e)
-                                <li>{{ $e }}</li>
+                               <div class="alert alert-danger" role="alert"> {{ $e }}</div>
                             @endforeach
-                        </ul>
+                        
                     @endif
                     
                     <div class="row">

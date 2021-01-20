@@ -29,12 +29,6 @@
                                 <option value="2">勉強</option>
                             </select>
                             </h5>
-                            @if ($errors->has('category_name_id'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('category_name_id') }}</strong>
-                                        </span>
-                            @endif
-                            
                         </div>
                     </div>
                     

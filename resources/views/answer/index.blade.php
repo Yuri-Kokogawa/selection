@@ -26,15 +26,10 @@
                                 <div class="category">
                                    カテゴリ（{{ str_limit($post->categories->category_name, 150) }}）
                                 </div>
-                                <div class="body mt-3"　style="word-wrap:break-word;">
+                                <div class="body mt-3 mb-2"　style="word-wrap:break-word;">
                                     {{ str_limit($post->body, 500) }}
                                 </div>
-                                
-                               
-                                <form action="{{ action('AnswerController@create', ['id' => $post->id]) }}"　method="get" >
-                                                @csrf
-                                            <button type="submit" class="btn btn-primary">回答する</button>
-                                </form>
+                               <a href="{{ action('AnswerController@create', ['id' => $post->id])}}" class="btn btn-primary">回答する</a>
                             </div>
                         </div>
                     </div>

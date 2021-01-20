@@ -12,27 +12,26 @@
     
     <div class="row">
         <div class="col-md-6 text-center">
-             <h3>年齢/({{$auth->age}})</h3>
+             <h3>年齢/()</h3>
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-6 text-center">
-             <h3>性別/({{$auth->gender == 0 ? "男性" : "女性"}})</h3>
+             <h3>性別/()</h3>
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-6 text-center">
-            <h3>カテゴリ/({{ str_limit($post->categories->category_name, 150) }})</h3>
+            <h3>カテゴリ/({{ str_limit($contributor_form->categories->category_name, 150) }})</h3>
         </div>
     </div>
     
     <div class="row mb-4">
          <div class="col-md-12 text-center">
-                 <textarea readonly rows="10" cols="100">
-                     
-                 </textarea>
+           {{--{{dd($contributor_form->body)}}--}}
+                 <textarea readonly rows="10" cols="100">{{$contributor_form->body }}</textarea>
          </div>
      </div>
      
