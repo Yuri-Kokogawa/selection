@@ -30,12 +30,12 @@
             <td>
               <select name="age_id" class="w-100">
                 <option value="">選択してください</option>
-                <option value="20歳未満">20歳未満</option>
-                <option value="20-29歳">20-29歳</option>
-                <option value="30-39歳">30-39歳</option>
-                <option value="40-49歳">40-49歳</option>
-                <option value="50-59歳">50-59歳</option>
-                <option value="60歳以上">60歳以上</option>
+                <option value="1">20歳未満</option>
+                <option value="2">20-29歳</option>
+                <option value="3">30-39歳</option>
+                <option value="4">40-49歳</option>
+                <option value="5">50-59歳</option>
+                <option value="6">60歳以上</option>
               </select>
             </td>
           </tr>

@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        
          $category1 = new \App\Categories([
             'category_name_id' => '1',
             'category_name' => '仕事'
@@ -100,6 +101,46 @@ class DatabaseSeeder extends Seeder
             'category_name' => 'その他'
         ]);
         $category15->save();
+        
+         $age = new \App\Ages([
+          'ages_id' =>'1',
+          'age'=>'20歳未満',
+        ]);
+        $age1->save();
+        
+         $age = new \App\Ages([
+          'ages_id' =>'2',
+          'age'=>'20-29歳',
+        ]);
+        $age2->save();
+        
+         $age = new \App\Ages([
+          'ages_id' =>'3',
+          'age'=>'30-39歳',
+        ]);
+        $age3->save();
+        
+        $age = new \App\Ages([
+          'ages_id' =>'4',
+          'age'=>'40-49歳',
+        ]);
+        $age4->save();
+        
+        $age = new \App\Ages([
+          'ages_id' =>'5',
+          'age'=>'50-59歳',
+        ]);
+        $age5->save();
+        
+        $age = new \App\Ages([
+          'ages_id' =>'6',
+          'age'=>'60歳以上',
+        ]);
+        $age6->save();
 
     }
+    
+       
 }
+
+

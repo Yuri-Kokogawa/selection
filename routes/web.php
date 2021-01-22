@@ -30,6 +30,7 @@ Route::group(['prefix' => 'contributor','middleware' => 'auth'], function() {
     Route::get('info', 'Contributor\ContributorsController@info');
     Route::post('info', 'Contributor\ContributorsController@info');
     Route::get('info_edit', 'Contributor\ContributorsController@info_edit');
+     Route::post('info_edit', 'Contributor\ContributorsController@info_edit');
     Route::get('password', 'Contributor\ContributorsController@password');
     
 });

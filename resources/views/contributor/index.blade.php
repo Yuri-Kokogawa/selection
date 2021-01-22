@@ -17,9 +17,22 @@
                         </div>
                         <div class="col-md-2 text-left">
                             <select name="cond_category">
-                                <option value="">選択してください</option>
+                                <option value="">全て</option>
                                 <option value="1">仕事</option>
                                 <option value="2">勉強</option>
+                                <option value="3">恋愛</option>
+                                <option value="4">学校</option>
+                                <option value="5">アニメ/漫画</option>
+                                <option value="6">ゲーム</option>
+                                <option value="7">芸能</option>
+                                <option value="8">映画/読書</option>
+                                <option value="9">健康</option>
+                                <option value="10">ファッション</option>
+                                <option value="11">グルメ</option>
+                                <option value="12">ニュース/政治</option>
+                                <option value="13">スポーツ</option>
+                                <option value="14">人生</option>
+                                <option value="15">その他</option>
                             </select>
                         </div>
                         <div class="col-md-2 text-center ">

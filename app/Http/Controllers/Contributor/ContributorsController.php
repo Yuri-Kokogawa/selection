@@ -115,6 +115,31 @@ class ContributorsController extends Controller
       return view('contributor.info_edit',[ 'auth' => $auth ]);
   }
   
+  public function info_update(Request $request, $id)
+
+ {
+
+    // 対象レコード取得
+    
+    $auth = User::find($id);
+    
+    // リクエストデータ受取
+    
+    $form = $request->all();
+    
+    // フォームトークン削除
+    
+    unset($form['_token']);
+    
+    // レコードアップデート
+    
+    $auth->fill($form)->save();
+    
+    return redirect('contributor/info');
+    
+     }
+
+  
     public function password()
   {
       $auth = Auth::user();
@@ -122,6 +147,9 @@ class ContributorsController extends Controller
       return view('contributor.password',[ 'auth' => $auth ]);
   }
   
+  
 }
+
+
 
     
