@@ -43,4 +43,10 @@ class User extends Authenticatable
       return $this->belongsTo('App\Ages','age_id','id');
     
     }
+    
+      public function Contributors()
+    {
+      return $this->hasMany('App\Contributors');
+    
+    }
 }

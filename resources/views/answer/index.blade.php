@@ -16,12 +16,6 @@
                                     {{ $post->updated_at->format('Y年m月d日') }}
                                 </div>
                                 
-                                <!--@if( Auth::check() )-->
-                                <!--<div class="age">-->
-                                <!--   {{$auth->age_id}}-->
-                                <!--</div>-->
-                                <!--    {{$auth->gender == 0 ? "男性" : "女性"}}-->
-                                <!-- @endif   -->
                                     
                                 <div class="category">
                                    カテゴリ（{{ str_limit($post->categories->category_name, 150) }}）
@@ -29,7 +23,7 @@
                                 <div class="body mt-3 mb-2"　style="word-wrap:break-word;">
                                     {{ str_limit($post->body, 500) }}
                                 </div>
-                               <a href="{{ action('AnswerController@create', ['id' => $post->id])}}" class="btn btn-primary">回答する</a>
+                               <a href="{{ action('AnswerController@create_view', ['id' => $post->id])}}" class="btn btn-primary">回答する</a>
                             </div>
                         </div>
                     </div>

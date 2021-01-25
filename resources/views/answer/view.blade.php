@@ -15,13 +15,13 @@
     
     <div class="row">
         <div class="col-md-6 text-center">
-            <h4>年齢/()</h4>
+            <h4>年齢/({{$contributor->user->ages->age_name}})</h4>
         </div>
     </div> 
     
     <div class="row">
         <div class="col-md-6 text-center mb-2">
-            <h4>性別/()</h4>
+            <h4>性別/({{$contributor->user->gender == 0 ? "男性" : "女性"}})</h4>
         </div>
     </div> 
     

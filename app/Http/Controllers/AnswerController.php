@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\HTML;
 use App\Contributors;
 use App\Categories;
 use Auth;
+use App\Answers;
 class AnswerController extends Controller
 {
     public function index(Request $request)
@@ -50,7 +51,7 @@ class AnswerController extends Controller
         ]);
         $answer->save();
        
-      return view('answer.view',['contributor' => $contributor]);
+      return redirect("answer/view/{$contributor->id}");
   }
   
   
@@ -63,8 +64,8 @@ class AnswerController extends Controller
       }
       
        $auth = Auth::user();
-       
-    
+      
+      
       return view('answer.view',[ 'auth' => $auth ],['contributor' => $contributor]);
   }
 }

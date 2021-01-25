@@ -13,6 +13,7 @@ class Contributors extends Model
          
         'category_name_id' => 'required',
         'body' => 'required',
+        
     );
     
      public function Categories()
@@ -23,7 +24,13 @@ class Contributors extends Model
     
      public function Answers()
     {
-      return $this->hasMany('App\Answers');
+      return $this->hasMany('App\Answers','contributor_id','id');
+    
+    }
+    
+     public function User()
+    {
+      return $this->belongsTo('App\User','user_id','id');
     
     }
 }

@@ -14,13 +14,13 @@
     
     <div class="row">
         <div class="col-md-6 text-center">
-             <h3>年齢/()</h3>
+             <h3>年齢/({{$contributor_form->user->ages->age_name}})</h3>
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-6 text-center">
-             <h3>性別/()</h3>
+             <h3>性別/({{$contributor_form->user->gender == 0 ? "男性" : "女性"}})</h3>
         </div>
     </div>
     
@@ -38,16 +38,31 @@
       
       
      <div class="row">
-        <form action="{{ action('AnswersController@create', ['id' => $contributor_form->id,'answer' => '0']) }}" method="post" enctype="multipart/form-data">
-            <div class="col-md-6 text-center">
-                <button type="submit" class="btn btn-primary w-25">Yes</button>
-            </div>
-        </form>
+        <form action="{{ action('AnswerController@create', ['id' => $contributor_form->id]) }}" method="post" enctype="multipart/form-data">
+           @csrf
+            <!--<div class="col-md-6 text-center">-->
+            <!--    <button type="submit" class="btn btn-primary w-25">Yes</button>-->
+            <!--</div>-->
         
-        <form action="{{ action('AnswerController@create', ['id' => $contributor_form->id,'answer' => '1']) }}" method="post" enctype="multipart/form-data">
-            <div class="col-md-6 text-center">
-                <button type="submit" class="btn btn-danger w-25">No</button>
+        
+            <!--<div class="col-md-6 text-center">-->
+            <!--    <button type="submit" class="btn btn-danger w-25">No</button>-->
+            <!--</div>-->
+            
+            <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault1" value="0">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Yes
+                  </label>
             </div>
+            <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer" id="flexRadioDefault2" value="1">
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    No
+                  </label>
+            </div>
+            
+            <input type="submit" class="btn btn-primary" value="送信">
         </form>
      </div>
      

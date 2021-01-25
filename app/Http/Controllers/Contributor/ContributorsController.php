@@ -33,8 +33,12 @@ class ContributorsController extends Controller
       unset($form['_token']);
       
       
+       $auth = Auth::user();
+       
       // データベースに保存する
       $contributor->fill($form);
+      $contributor->user_id = $auth->id;
+      
       $contributor->save();
       
       // contributor/createにリダイレクトする
