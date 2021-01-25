@@ -15,9 +15,15 @@ class Answers extends Model
         'answer' => 'required',
     );
     
-     public function Users()
+     public function Contributors()
     {
-      return $this->belongsTo('App\User','users_id','users_id','App\contributor_id,contributor_id');
+      return $this->belongsTo('App\Contributors','contributor_id,','id');
     
     }
+     public function User()
+    {
+      return $this->hasOne('App\User','user_id,','id');
+    
+    }
+    
 }

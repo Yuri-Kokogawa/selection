@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-    <form action="info" method="POST">
+    <form action="{{ action('Contributor\ContributorsController@info_update',['id' => $auth->id])}}" method="POST"　enctype="multipart/form-data">
       @csrf
       
     <table class="table">
@@ -29,7 +29,7 @@
             <td>年齢</td>
             <td>
               <select name="age_id" class="w-100">
-                <option value="">選択してください</option>
+                <option value="{{$auth->age_id}}">選択してください</option>
                 <option value="1">20歳未満</option>
                 <option value="2">20-29歳</option>
                 <option value="3">30-39歳</option>
@@ -45,8 +45,8 @@
             <td>
               <div class="row">
                 <div class="col-md-12 text-left">
-                <input id="radio-a" type="radio" name="gender" value="男" checked><label for="radio-a">男</label>
-                <input id="radio-b" type="radio" name="gender" value="女"><label for="radio-b">女</label>
+                <input id="radio-a" type="radio" name="gender" value="0" checked><label for="radio-a">男</label>
+                <input id="radio-b" type="radio" name="gender" value="1"><label for="radio-b">女</label>
                 </div>
               </div>
             </td>

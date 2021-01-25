@@ -20,4 +20,10 @@ class Contributors extends Model
       return $this->belongsTo('App\Categories','category_name_id','category_name_id');
     
     }
+    
+     public function Answers()
+    {
+      return $this->hasMany('App\Answers');
+    
+    }
 }

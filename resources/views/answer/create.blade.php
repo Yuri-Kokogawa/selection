@@ -36,15 +36,21 @@
          </div>
      </div>
       
+      
      <div class="row">
-        <div class="col-md-6 text-center">
-            <button type="submit" class="btn btn-primary w-25">Yes</button>
-        </div>
-        <div class="col-md-6 text-center">
-            <button type="submit" class="btn btn-danger w-25">No</button>
-        </div>
+        <form action="{{ action('AnswersController@create', ['id' => $contributor_form->id,'answer' => '0']) }}" method="post" enctype="multipart/form-data">
+            <div class="col-md-6 text-center">
+                <button type="submit" class="btn btn-primary w-25">Yes</button>
+            </div>
+        </form>
         
+        <form action="{{ action('AnswerController@create', ['id' => $contributor_form->id,'answer' => '1']) }}" method="post" enctype="multipart/form-data">
+            <div class="col-md-6 text-center">
+                <button type="submit" class="btn btn-danger w-25">No</button>
+            </div>
+        </form>
      </div>
+     
 </div>
 
 @endsection

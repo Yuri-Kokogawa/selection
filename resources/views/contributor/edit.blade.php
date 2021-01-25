@@ -19,8 +19,8 @@
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <h5>カテゴリ
-                            <select name="category_name_id"　value="{{ $contributor_form->category_name_id}}">
-                                <option value="">選択してください</option>
+                            <select name="category_name_id">
+                                <option value="{{ $contributor_form->category_name_id}}">選択してください</option>
                                 <option value="1">仕事</option>
                                 <option value="2">勉強</option>
                                 <option value="3">恋愛</option>

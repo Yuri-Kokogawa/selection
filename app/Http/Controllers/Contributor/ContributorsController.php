@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Contributors;
 use App\Categories;
 use Auth;
+use App\User;
 class ContributorsController extends Controller
 {
     
@@ -116,27 +117,16 @@ class ContributorsController extends Controller
   }
   
   public function info_update(Request $request, $id)
-
  {
-
     // 対象レコード取得
-    
     $auth = User::find($id);
-    
     // リクエストデータ受取
-    
     $form = $request->all();
-    
     // フォームトークン削除
-    
     unset($form['_token']);
-    
     // レコードアップデート
-    
     $auth->fill($form)->save();
-    
     return redirect('contributor/info');
-    
      }
 
   

@@ -22,9 +22,19 @@ class AnswerController extends Controller
         return view('answer.index', ['posts' => $posts],[ 'auth' => $auth ]);
     }
     
+     public function create_view(int $id)
+    {
+        $contributor = Contributors::find($id);
+        if (empty($contributor)) {
+            abort(404);
+        }
+
+        $auth = Auth::user();
+
+        return view('answer.create', ['auth' => $auth], ['contributor_form' => $contributor]);
+    }
     
-    
-      public function create(int $id)
+      public function create(int $id ,int $answer_num)
   {
       $contributor= Contributors::find($id);
       if (empty($contributor)) {
@@ -33,7 +43,14 @@ class AnswerController extends Controller
       
        $auth = Auth::user();
        
-      return view('answer.create',[ 'auth' => $auth ],['contributor_form' => $contributor]);
+       $answer = new Answers([
+          'user_id' =>$auth->id,
+          'contributor_id'=>$contributor->id,
+          'answer'=>$answer_num,
+        ]);
+        $answer->save();
+       
+      return view('answer.view',['contributor' => $contributor]);
   }
   
   

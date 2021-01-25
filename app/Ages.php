@@ -14,7 +14,7 @@ class Ages extends Model
         
     );
     
-    public function users()
+    public function User()
     {
       return $this->hasMany('App\User');
 

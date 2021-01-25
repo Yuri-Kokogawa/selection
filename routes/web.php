@@ -30,7 +30,7 @@ Route::group(['prefix' => 'contributor','middleware' => 'auth'], function() {
     Route::get('info', 'Contributor\ContributorsController@info');
     Route::post('info', 'Contributor\ContributorsController@info');
     Route::get('info_edit', 'Contributor\ContributorsController@info_edit');
-     Route::post('info_edit', 'Contributor\ContributorsController@info_edit');
+    Route::post('info_edit/{id}', 'Contributor\ContributorsController@info_update');
     Route::get('password', 'Contributor\ContributorsController@password');
     
 });
@@ -39,7 +39,7 @@ Route::group(['prefix' => 'contributor','middleware' => 'auth'], function() {
 // 回答者側のコントローラー
 Route::group(['prefix' => 'answer','middleware' => 'auth'], function() {
     Route::get('index', 'AnswerController@index');
-    Route::get('create/{id}', 'AnswerController@create');
-    Route::post('create/{id}', 'AnswerController@create');
+    Route::get('create/{id}', 'AnswerController@create_view');
+    Route::post('create/{id}/{answer}', 'AnswerController@create');
     Route::get('view/{id}', 'AnswerController@view');
 });

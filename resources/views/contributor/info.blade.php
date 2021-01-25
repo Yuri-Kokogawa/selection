@@ -25,7 +25,7 @@
           
           <tr>
             <td>年齢</td>
-            <td>{{$auth->age}}</td>
+            <td>{{$auth->ages->age_name}}</td>
           </tr>
           
           <tr>
