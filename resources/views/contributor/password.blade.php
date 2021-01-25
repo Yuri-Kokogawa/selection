@@ -11,7 +11,7 @@
             <table class="table">
                 <tbody>
                   <tr>
-                    <td>パスワード</td>
+                    <td>既存パスワード</td>
                   <td><input class="form-input__input  w-100" type="password" name="password"></td>
                   </tr>
                   
