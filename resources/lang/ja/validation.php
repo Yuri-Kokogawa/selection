@@ -136,6 +136,9 @@ return [
             'required' => 'カテゴリを選択してください',
            
             ],
+            'We have e-mailed your password reset link!'=>[
+                'required' => '送信完了しました！'
+                ],
     ],
     
 

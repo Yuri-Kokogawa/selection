@@ -67,9 +67,9 @@
                                         {{ __('messages.My Page') }}
                                     </a>
                                     
-                                    <a class="dropdown-item" href="{{ action('Contributor\ContributorsController@password') }}">
-                                        {{ __('messages.Change Password') }}
-                                    </a>
+                                    <!--<a class="dropdown-item" href="{{ action('Contributor\ContributorsController@password') }}">-->
+                                    <!--    {{ __('messages.Change Password') }}-->
+                                    <!--</a>-->
                                     
                                     <a class="dropdown-item" href="{{ action('Contributor\ContributorsController@index') }}">
                                         {{ __('messages.List') }}

@@ -35,8 +35,9 @@ class AnswerController extends Controller
         return view('answer.create', ['auth' => $auth], ['contributor_form' => $contributor]);
     }
     
-      public function create(int $id ,int $answer_num)
+      public function create(int $id ,Request $request)
   {
+      
       $contributor= Contributors::find($id);
       if (empty($contributor)) {
         abort(404);    
@@ -44,10 +45,11 @@ class AnswerController extends Controller
       
        $auth = Auth::user();
        
+       $form=$request->all();
        $answer = new Answers([
           'user_id' =>$auth->id,
           'contributor_id'=>$contributor->id,
-          'answer'=>$answer_num,
+          'answer'=>$form['answer'],
         ]);
         $answer->save();
        

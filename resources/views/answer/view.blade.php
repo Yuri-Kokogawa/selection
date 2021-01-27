@@ -15,19 +15,25 @@
     
     <div class="row">
         <div class="col-md-6 text-center">
-            <h4>年齢/({{$contributor->user->ages->age_name}})</h4>
+            <h3 class="text-danger">投稿者</h3>
         </div>
     </div> 
     
     <div class="row">
-        <div class="col-md-6 text-center mb-2">
-            <h4>性別/({{$contributor->user->gender == 0 ? "男性" : "女性"}})</h4>
+        <div class="col-md-6 text-center">
+            <h5>年齢/{{$contributor->user->ages->age_name}}</h5>
+        </div>
+    </div> 
+    
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h5>性別/{{$contributor->user->gender == 0 ? "男性" : "女性"}}</h5>
         </div>
     </div> 
     
      <div class="row">
         <div class="col-md-6 text-center">
-            <h4>カテゴリ/({{$contributor->categories->category_name}})</h4>
+            <h5>カテゴリ/{{$contributor->categories->category_name}}</h5>
         </div>
     </div>
     

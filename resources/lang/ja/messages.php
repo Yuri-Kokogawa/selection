@@ -18,5 +18,7 @@ return [
     'List'=>'投稿一覧',
     'Top Page'=>'トップページ',
     'Change Password'=>'パスワード変更',
-    'Forgot Your Password?'=>'パスワードを忘れた'
+    'Forgot Your Password?'=>'パスワードを忘れた',
+    'Reset Password'=>'パスワード再設定',
+    'Send Password Reset Link'=>'アドレスにメールを送信する'
 ];
